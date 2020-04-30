@@ -1,2 +1,2 @@
 # Theme1
-Web made with HTML, CSS Grid and CSS Flexbox
+Basic web responsive made with HTML, CSS Grid and CSS Flexbox

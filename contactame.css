@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope|Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: grid;
+
+    /*medidas*/
+    height: 100%;
+    width: 100%;
+
+    /*degradado de fondo*/
+    background-image: linear-gradient(to bottom, #ff7447, #ff8141, #ff8e3c, #ff9b38, #ffa836, #ffa836, #ffa836, #ffa836, #ff9b38, #ff8e3c, #ff8141, #ff7447);
+}
+
+section{
+    margin: 20px;
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    /*Area*/
+    grid-template-areas: 
+    "header header"
+    "sidebar contenido"
+    "footer footer";
+    
+    width: 65%;
+    height: 70%;
+    
+    /*Sombreado y degradado*/
+    background-image: linear-gradient(to right bottom, #006fff, #008dff, #00a6ff, #00bcff, #00cff8, #00daf3, #00e4e9, #00eddb, #00f3d0, #00f7c0, #00fcad, #0bff96);
+    -webkit-box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    
+    /*bordes redondeados*/
+    border-radius: 50px;
+    min-height: 705px;
+    min-width: 1123px;
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    align-self: center;
+}
+
+header ul{
+    display: inline-flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 100%;
+}
+
+header ul li{
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color: white;
+    border: 2px solid #695aaa;
+    padding: 0;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+a:hover{
+    animation:
+        rellenar
+        0.8s
+        ease-in-out
+        both;
+}
+
+main{
+    grid-area: contenido;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    align-items: center;
+    width: 100%;
+}
+
+main div{
+    display: flex;
+    align-items: center;
+}
+
+main img{
+    margin-right: 20px;
+    width: 48px;
+}
+
+main div:hover{
+    animation:
+        zoom 
+        1s
+        ease-in-out
+        both;
+    
+    padding: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right bottom, #006fff, #008dff, #00a6ff, #00bcff, #00cff8, #00daf3, #00e4e9, #00eddb, #00f3d0, #00f7c0, #00fcad, #0bff96);
+    -webkit-box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    
+}
+
+aside{
+    grid-area: sidebar;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: auto;
+
+}
+
+main span{
+    color: white;
+    font-size: 1.2em;
+    
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+@keyframes rellenar{
+    0%{
+        background: #958ac5;
+    }
+
+    50%{
+        background: #786cac;
+    }
+
+    100%{
+        background: #695aaa;
+    }
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+
+@media screen and (max-width: 500px){
+    section{
+        margin: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    aside img {
+        overflow: hidden;
+        display: none;
+    }
+
+    header ul{
+        display: inline-flex;
+        justify-content: space-around; 
+        align-self: center;
+        width: 100%;
+    }
+    header ul li a{
+        font-size: 0.9em;
+        padding: 7px;
+    }
+    main{
+        grid-area: contenido;
+        display: grid;
+        justify-self: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+        align-items: center;
+        width: 100%;
+    }
+
+    footer{
+        grid-area: footer;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+    }
+}

@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope|Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: grid;
+
+    /*medidas*/
+    height: 100%;
+    width: 100%;
+    
+    /*alineacion*/
+    justify-content: center;
+    align-content: center;
+
+    /*degradado de fondo*/
+    background-image: linear-gradient(to right bottom, #ec038b, #f22182, #f6347a, #f84474, #fa526e, #fd5e66, #ff6b5f, #ff7759, #ff864e, #ff9744, #ffa83c, #fbb936);
+}
+
+section{
+    margin: 20px;
+    display: grid;
+    
+    /*Area*/
+    grid-template-areas: 
+    "contenido  sidebar"
+    "footer     footer";
+    
+    height: 600px;
+    
+    /*Sombreado y degradado*/
+    background-image: linear-gradient(to right bottom, #006fff, #008dff, #00a6ff, #00bcff, #00cff8, #00daf3, #00e4e9, #00eddb, #00f3d0, #00f7c0, #00fcad, #0bff96);
+    -webkit-box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 41px 24px rgba(0,0,0,0.75);
+    
+    /*bordes redondeados*/
+    border-radius: 50px;
+}
+
+main{
+    width: auto;
+    grid-area: contenido;
+}
+
+main img{
+    margin-top: 20px;
+    margin-left: 15%;
+    width: 60%;
+    height: 85%;
+}
+
+aside{
+    display: grid;
+    justify-content: center;
+    align-content: space-around;
+    grid-area: sidebar;
+    height: 100%;
+}
+
+
+aside ul{
+    text-align: center;
+    border-radius: 20px;
+    
+    /*ajuste*/
+    padding: 10px;
+    margin-right: 70px;
+
+    border: 2px #695aaa solid;
+
+
+}
+
+aside ul li{
+    list-style-type: none;
+}
+
+aside ul li a{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+ul:hover{
+    animation:
+        rellenar
+        0.8s
+        ease-in-out
+        both;
+}
+
+footer{
+    display: flex;
+    
+    /*alineación*/
+    align-items: center;
+    justify-content: center;
+    
+    /*Centrar y ajustar*/
+    margin: auto;
+    padding-top: 20px;
+    width: 80%;
+    grid-area: footer;
+    
+    /*linea separatoria*/
+    border-top: solid 1.4px #695aaa;
+}
+span{
+    /*Ajuste de la letra*/
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 2em;
+
+    /*margen izq*/
+    margin-left: 30px;
+
+    /*Animacion*/
+    animation:
+        aparecer
+        1.15s
+        ease-in-out
+        both;
+
+}
+
+footer img{
+    max-height: 48px;
+    min-height: 48px;
+    min-width: 48px;
+    animation:
+        rotacion
+        1.15s
+        ease-in-out
+        both;
+}
+
+/*Haciendo animaciones*/
+@keyframes rotacion{
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aparecer{
+    from{
+        margin-left: 2%;
+    }
+
+    to{
+        margin-left: calc(2% + 50px);
+    }
+}
+
+@keyframes rellenar{
+    0%{
+        background: #958ac5;
+    }
+
+    50%{
+        background: #786cac;
+    }
+
+    100%{
+        background: #695aaa;
+    }
+}
+
+/*Movil y tablet*/
+@media screen and (max-width: 680px){
+    section{
+        grid-template-areas: 
+        "contenido"  
+        "sidebar"
+        "footer";
+    }
+
+    aside{
+        /*Convertir a flex para hacer todo a linea*/
+        display: inline-flex;
+        flex-direction: row;
+    }
+
+    aside ul{
+        /*centrar*/
+        margin: auto;
+    }
+    /*Mejorar visibilidad en footer - espaciado entre img de instagram y Jcode_Web*/
+    @keyframes aparecer{
+        from{
+            margin-left: 2%;
+        }
+    
+        to{
+            margin-left: calc(2% + 30px);
+        }
+    }
+}
